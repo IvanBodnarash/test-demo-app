@@ -1,34 +1,18 @@
 import React, { useState } from "react";
-
-const colors = [
-  "red",
-  "green",
-  "blue",
-  "yellow",
-  "purple",
-  "orange",
-  "cyan",
-  "magenta",
-  "lime",
-  "teal",
-  "navy",
-  "indigo",
-  "violet",
-  "fuchsia",
-  "pink",
-];
+import searchColors from "../logic/searchColors";
 
 export default function ColorSearch() {
   const [color, setColor] = useState("");
   const [filteredColors, setFilteredColors] = useState([]);
   const handleFilter = (event) => {
-    const value = event.target.value;
-    setColor(value);
-    if (value === "") {
+    const query = event.target.value;
+    setColor(query);
+    if (query === "") {
       setFilteredColors([]);
     } else {
-      const filtered = colors.filter((color) => color.includes(value));
-      setFilteredColors(filtered);
+      const result = searchColors(query);
+      setFilteredColors(result);
+      console.log(result);
     }
   };
   return (

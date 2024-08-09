@@ -1,6 +1,6 @@
 import React from "react";
-import ColorSearch from "./components/colors";
-import PokemonSearch from "./components/pokemons";
+import ColorSearch from "./components/ColorSearch";
+import PokemonSearch from "./components/PokemonSearch";
 
 import "./App.css";
 
